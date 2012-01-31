@@ -1,12 +1,15 @@
 <!DOCTYPE html> 
 <!-- Dan Annis Go Fast Racing App -->
-<html> 
+<html class="no-js"> 
 <head>
     <title>Go Fast Hobby Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />  
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+    <script type="text/javascript" src="js/libs/main.js" ></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>	
+
+	
+   	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" /> 	
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile.structure-1.0.min.css" />
 	<link rel="stylesheet" href="css/Go_Fast.css" />
     <!-- <link rel="stylesheet" href="jquery.mobile-1.0b2.css" /> -->
@@ -51,7 +54,7 @@
 					<li><a href="#Announcements">Announcements</a></li>
 					<li><a href="#racing_info">Racing Info</a></li>
 					<li><a href="#directions_map">Maps</a></li>
-					<li><a href="#form">Race Day Check In</a></li>
+					<li><a href="#RaceCheckin">Race Day Check In</a></li>
 					<li><a href="#mailer"> Join Our Mailing List</a></li>
 				</ul>
 			</div><!-- /content -->
@@ -224,21 +227,21 @@
 		
 		
 		
-	<div data-role="page" id="form" data-add-back-btn="true">
+	<div data-role="page" id="RaceCheckin" data-add-back-btn="true">
 			<div data-role="header" data-theme="c" id="header" >
 				<h1>Racer Check-in </h1>
 			</div>
 			<div data-role="content" data-theme="b">
-				<form method="#" rel="external" data-theme="c" action="">
+				<form id="racerForm" method="#" rel="external" data-theme="c" action="">
 				<fieldset>
 					
 					<div data-role="fieldcontain">
-						<label for="nickname">Nick Name</label>
+						<label for="nickNname">Nick Name</label>
 						<input type="text" name="nickname">
 					</div>
 									
 					<div data-role="fieldcontain">
-						<label for="fullname">Full Name</label>
+						<label for="fullName">Full Name</label>
 						<input type="text" name="fullname"><br/>
 					</div>
 					
@@ -249,15 +252,15 @@
 					
 					<div data-role="fieldcontain">
 					<label for="flip">New to the Track?</label>
-						<select name="slider" id="flip" data-role="slider">
+						<select name="flip" id="flip" data-role="slider">
 							<option value="no">No</option>
 							<option value="yes">Yes</option>
 						</select> 
 					</div>
 					
 					<div data-role="fieldcontain" data-overlay-theme="a">
-					   <label for="selectchoice" class="select">Racing Class:</label>
-					   <select  data-native-menu=false name="selectchoice" id="selectchoice">
+					   <label for="raceClass" class="select">Racing Class:</label>
+					   <select  data-native-menu=false name="raceClass" id="raceClass">
 					      <option data-placeholder="true">Choose One</option>	
 					      <option value="standard">1/8th Scale Truck</option>
 					      <option value="rush">1/10th Scale Buggy</option>
