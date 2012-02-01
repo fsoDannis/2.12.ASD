@@ -96,3 +96,28 @@ a:hover, a:active {
 #footer{
 	font-size=8px;
 }
+
+
+#list { 
+	width: 90%; 
+	margin: 0 auto 20px; }
+	#list div {
+		background: #ccc;
+		border-bottom: 1px solid #777;
+		padding: 15px;
+	}
+	#list div p:first-child { margin-top: 0; }
+	#list a {
+		padding: 0 10px;
+		font-size: 90%; 
+		color: #900;
+	}
+	#list a:hover { 
+		color: #090;
+	}
+	
+#options { margin: 15px; }
+	#options a { color: #900; }
+
+#editItem { display: none; }
+

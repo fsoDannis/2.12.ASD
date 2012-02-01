@@ -4,11 +4,8 @@
 <head>
     <title>Go Fast Hobby Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-    <script type="text/javascript" src="js/libs/main.js" ></script>
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>	
-
-	
+    <script src="js/libs/modernizr.js"></script>	
+	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
    	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" /> 	
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile.structure-1.0.min.css" />
 	<link rel="stylesheet" href="css/Go_Fast.css" />
@@ -270,8 +267,13 @@
 				
 				</fieldset>
 				<br>
-				<button type="submit" value="submit" id="submit">Save Data</button>
+				<input id="submit" type="submit" value="Submit" />
+				<input id="editItem" type="submit" value="Edit" />
 				</form>
+				<div id="list"></div>
+				<p id="options">
+					<a id="clear" href="#">Clear Local Storage</a>
+				</p>
 			</div>
 		       
 		       <!-- /content -->
@@ -309,7 +311,7 @@
 						<input id="to" class="ui-bar-c" type="text" placeholder="The Shop"  />
 					</p>
 
-					<a id="submit" href="#" data-role="button" data-icon="search">Get directions</a>
+					<a id="submitDirections" href="#" data-role="button" data-icon="search">Get directions</a>
 				</div>
 				<div id="results" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" style="display:none;">
 					<div class="ui-li ui-li-divider ui-btn ui-bar-b ui-corner-top ui-btn-up-undefined">Results</div>
@@ -357,6 +359,9 @@
         $('#slider').nivoSlider();
     });
     </script> 
+     
+    <script type="text/javascript" src="js/libs/main.js" ></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
 
 </body>
 </html>
