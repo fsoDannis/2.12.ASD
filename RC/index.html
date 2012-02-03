@@ -1,17 +1,21 @@
 <!DOCTYPE html> 
 <!-- Dan Annis Go Fast Racing App -->
-<html class="no-js"> 
+<html lang=""> 
 <head>
+	<meta charset="utf-8">
     <title>Go Fast Hobby Shop</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <script src="js/libs/modernizr.js"></script>	
-	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 	
+    
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    
+   <!-- <script src="js/libs/modernizr.js"></script>	-->
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile.structure-1.0.min.css" />  
    	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" /> 	
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile.structure-1.0.min.css" />
 	<link rel="stylesheet" href="css/Go_Fast.css" />
-    <!-- <link rel="stylesheet" href="jquery.mobile-1.0b2.css" /> -->
-   	<link rel="stylesheet" href="css/themes/default/default.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+  	<link rel="stylesheet" href="css/themes/default/default.css" type="text/css" media="screen" /> 
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" /> 
 
    
    
@@ -51,7 +55,7 @@
 					<li><a href="#Announcements">Announcements</a></li>
 					<li><a href="#racing_info">Racing Info</a></li>
 					<li><a href="#directions_map">Maps</a></li>
-					<li><a href="#RaceCheckin">Race Day Check In</a></li>
+					<li><a href="#RaceCheckin" data-transition="flip">Race Day Check In</a></li>
 					<li><a href="#mailer"> Join Our Mailing List</a></li>
 				</ul>
 			</div><!-- /content -->
@@ -229,7 +233,7 @@
 				<h1>Racer Check-in </h1>
 			</div>
 			<div data-role="content" data-theme="b">
-				<form id="racerForm" action="#" method="post" rel="external" data-theme="c" action="">
+				<form id="racerForm" data-ajax="false" action="#" method="post" rel="external" data-theme="c" action="">
 				<fieldset>
 					
 					<div data-role="fieldcontain">
@@ -244,9 +248,9 @@
 					
 					<div data-role="fieldcontain">
 						<label for="age">Age</label>
-						<input type="range" name="age" id="age" value="18" min="0" max="100">
+						<input type="range" name="age" id="age" step="1" value="18" min="0" max="100" />
 					</div>
-					
+							
 					<div data-role="fieldcontain">
 					<label for="flip">New to the Track?</label>
 						<select name="flip" id="flip" data-role="slider">
@@ -353,15 +357,17 @@
 		</div><!-- /footer -->	
 		</div>		      
   
-    <script type="text/javascript" src="js/libs/jquery.nivo.slider.pack.js"></script>
+    
+
+  <!--  <script type="text/javascript" src="js/libs/main.js" ></script> -->
+    <script type="text/javascript" src="js/libs/jquery.nivo.slider.pack.js"></script> 
+    <script>getItems();</script> 
     <script type="text/javascript">
     $(window).load(function() {
         $('#slider').nivoSlider();
     });
     </script> 
-     
-    <script type="text/javascript" src="js/libs/main.js" ></script>
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
-	<script>getItems();</script>
+
+
 </body>
 </html>

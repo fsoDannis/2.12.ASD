@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Go Fast Racing</title>
+	<meta name="description" content="Add Racer" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="" />
+
+	<!-- Mobile Stuff -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Clear Fonts -->
+	<meta http-equiv="cleartype" content="on">
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.datebox.css" />
+	<link rel="stylesheet" type="text/css" href="css/Go_Fast.css" />
+	
+	<!--  Modernizr for HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+	<div data-role="page" id="racerCheckInPage" >
+
+		<div data-role="header" data-theme="a" >
+			<a href="index.html" class="ui-btn-left" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+			<h1>Racer Checkin</h1>
+		</div>
+		<div data-role="content" data-theme="b" class="content">
+			<form data-theme="c" action="#" method="post" onsubmit="validateForm();" name="racerCheckInForm" id="racerCheckInForm">
+			<div id="selectraceClass" data-role="fieldcontain">
+			<fieldset>
+					<select id="raceClass" name="raceClass" data-native-menu="false" class="required">
+					<option data-placeholder="true" value>What are you rolling?</option>
+					<optgroup label="4X4 Buggy">
+					<option value="4X4 Buggy Pro Mod">4X4 Buggy Pro Mod</option>
+					<option value="4X4 Buggy Sportsman">4X4 Buggy Sportsman</option>
+					<option value="4X4 Buggy Junior">4X4 Buggy Junior</option>
+					<optgroup label="4X4 Truggy">
+					<option value="4X4 Truggy Pro Mod">4X4 Truggy Pro Mod</option>
+					<option value="4X4 Truggy Sprotsman">4X4 Truggy Sprotsman</option>
+					<option value="4X4 Truggy Junior">4X$ Truggy Junior</option>
+					</optgroup>
+				</select>
+			</fieldset>
+		</div>
+		<div id="personalinfo" data-role="fieldcontain">
+			<fieldset>
+				<legend><h3>Personal information</h3></legend><br />
+				<label for="nickName">Nick Name:</label>
+				<input type="text" id="nickName" name="nickName" class="required" /><br />
+				<label for="firstName">First Name:</label>
+				<input type="text" id="firstName" name="firstName" /><br />
+				<label for="lastName">Last Name:</label>
+				<input type="text" id="lastName" name="lastName" /><br />
+				<label for="age">Enter your Age:</label><br />
+				<input type="range" value="18" min="1" max="100" id="age" /><br /><br />
+				<label for="new2Track">New to the Track?</label>
+				<input type="checkbox" name="new2Track" id="new2Track" /><br /> 
+				<label for="raceDate">Race Date:</label><br />
+				<input type="date" id="raceDate" name="raceDate" class="required" data-theme="b" data-role="datebox" data-options='{"mode": "calbox"}' /> <br /><br />
+				<label for="anyComments">Any Comments: </label>
+				<textarea id="anyComments"></textarea>
+			</fieldset>
+		</div>
+		<div id="addmoviebuttons" data-role="fieldcontain">
+			<div id="submit-reset-buttons">
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<input type="reset" id="reset" value="Reset" />
+					</div>
+					<div class="ui-block-b">
+						<input type="submit" id="submit" class="addmoviebutton" value="Add Racer" data-theme="b" />
+					</div>
+				</div>
+			</div>
+			<div id="edit-item-button" style="display: none;">
+				<input type="button" id="edit-item" value="Edit Item" />
+			</div>
+		</div>
+		</form>
+		<div data-role="header" data-theme="c" class="ui-bar">
+			<h1>Dannis Designs</h1>
+		</div>	
+		<div id="list"></div>
+		<center>
+		<div id="clearlocal">
+			<p id="clear"><a href="#" onclick="clearItems(); location.reload();">Clear Local Storage</a></p>
+		</div>
+		</center>
+	
+		<!-- Some Scripts -->
+		<script src="js/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
+		<script src="js/libs/jquery.validate.min.js"></script>
+		<script src="js/libs/jquery.mobile.datebox.js"></script>
+		<script src="js/main.js"></script>
+		<script>getItems();</script>
+		</div>
+	</div>
+
+
+</body>
+</html>

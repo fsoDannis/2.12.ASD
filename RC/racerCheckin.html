@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<!-- Dan Annis Go Fast Racing App -->
+<html lang=""> 
+<head>
+	<meta charset="utf-8">
+    <title>Go Fast Hobby Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 	
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>	
+	<!-- <script type="text/javascript" src="js/libs/main.js" ></script> -->
+	
+  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.css" type="text/css"/>
+	<link rel="stylesheet" href="css/Go_Fast.css" /> 
+
+ 	
+ 	<!-- <link rel="stylesheet" href="css/style.css" type="text/css"  /> -->
+
+</head>
+<body>
+		<div data-role="page" id="RaceCheckin" data-add-back-btn="true">
+			<div data-role="header" data-theme="c" id="header" >
+				<h1>Racer Check-in </h1>
+			</div>
+			<div data-role="content" data-theme="b">
+				<form id="racerForm" action="#" method="post" rel="external" data-theme="c" action="">
+				<fieldset>
+					
+					<div data-role="fieldcontain">
+						<label for="nickNname">Nick Name</label>
+						<input type="text" name="nickname">
+					</div>
+									
+					<div data-role="fieldcontain">
+						<label for="fullName">Full Name</label>
+						<input type="text" name="fullname"><br/>
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="age">Age</label>
+						<input type="range" name="age" id="age" step="1" value="18" min="0" max="100" />
+					</div>
+							
+					<div data-role="fieldcontain">
+					<label for="flip">New to the Track?</label>
+						<select name="flip" id="flip" data-role="slider">
+							<option value="no">No</option>
+							<option value="yes">Yes</option>
+						</select> 
+					</div>
+					
+					<div data-role="fieldcontain" data-overlay-theme="a">
+					   <label for="raceClass" class="select">Racing Class:</label>
+					   <select  data-native-menu=false name="raceClass" id="raceClass">
+					      <option data-placeholder="true">Choose One</option>	
+					      <option value="standard">1/8th Scale Truck</option>
+					      <option value="rush">1/10th Scale Buggy</option>
+					      <option value="express">1/8th Scale 4X4 Buggy</option>
+					   </select>
+					</div>
+				
+				</fieldset>
+				<br>
+				<input id="submit" type="submit" value="Submit" />
+				<input id="editItem" type="submit" value="Edit" />
+				</form>
+				<div id="list"></div>
+				<p id="options">
+					<a id="clear" href="#">Clear Local Storage</a>
+				</p>
+			</div>
+
+
+  <script>getItems();</script>  
+
+</body>
+</html>
