@@ -17,17 +17,15 @@ function getItems(){
 		var new2Track = value[5];
 		var raceDate = value[6];
 		var anyComments = value[7];
-		var newDiv = document.createElement("div"); 
+		var newDiv = document.createElement("div"); // Not sure how to change to jquery
 		
-		var newh3 = document.createElement("h2");
-		newh3.setAttribute("style", "color: #164400;");
-		var nickNameTxt = document.createTextNode("Welcome '" + value[1] + "'!");
-		newh3.appendChild(nickNameTxt);
-		newDiv.appendChild(newh3);
-		getListdiv.appendChild(newDiv);
-		var setdiv = newDiv.setAttribute("data-role", "fieldcontain");
+		$('<h2 />',{
+			style: 'color:#164000',
+			text: "Welcome '" + value[1] + "'!"
+		}).appendTo(newDiv);
+		var setdiv = newDiv.setAttribute("data-role", "fieldcontain");  // Not sure how to change to JQ
 	
-			$('<p />',{
+		$('<p />',{
 			text:'Full Name: '+ value[2] + " " + value[3]
 		}).appendTo(newDiv);
 
@@ -59,11 +57,11 @@ function getItems(){
 			if(raceClass == "4X4 Truggy Sprotsman"){ raceClassImage = "tsman.jpg"; }
 		
 		//add image
-		var newP = document.createElement("p");
-		var newImg = document.createElement("IMG");
-		newImg.setAttribute("src", "images/" + raceClassImage);
-		newP.appendChild(newImg);
-		newDiv.appendChild(newP);
+		$('<p>').appendTo(newDiv);
+		$('<img />',{
+			src: "images/" + raceClassImage
+		}).appendTo(newDiv); //I need to get this into the P tag
+		
 		
 		//delete single item link
 		var newP = document.createElement("p");
