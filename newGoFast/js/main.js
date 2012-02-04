@@ -26,42 +26,30 @@ function getItems(){
 		newDiv.appendChild(newh3);
 		getListdiv.appendChild(newDiv);
 		var setdiv = newDiv.setAttribute("data-role", "fieldcontain");
+	
+			$('<p />',{
+			text:'Full Name: '+ value[2] + " " + value[3]
+		}).appendTo(newDiv);
+
+		$('<p />',{
+			text:'Registered Class: '+ value[0]
+		}).appendTo(newDiv);
 		
-		var newP = document.createElement("p");
-		var firstNameTxt = document.createTextNode("Name: " + value[2] + " " + value[3]);
-		newP.appendChild(firstNameTxt);
-		newDiv.appendChild(newP);
-		getListdiv.appendChild(newDiv);
-		
-		var newP = document.createElement("p");
-		var raceClassTxt = document.createTextNode("Registered Class: " + value[0]);
-		newP.appendChild(raceClassTxt);
-		newDiv.appendChild(newP);
-		getListdiv.appendChild(newDiv);
+		$('<p />',{
+			text:'Racing Date: '+ value[6]
+		}).appendTo(newDiv);
 				
-		var newP = document.createElement("p");
-		var raceDateTxt = document.createTextNode("Racing Date: " + value[6]);
-		newP.appendChild(raceDateTxt);
-		newDiv.appendChild(newP);
-		getListdiv.appendChild(newDiv);
+		$('<p />',{
+			text:'Age: '+ value[4]
+		}).appendTo(newDiv);
 		
-		var newP = document.createElement("p");
-		var ageTxt = document.createTextNode("Age: " + value[4]);
-		newP.appendChild(ageTxt);
-		newDiv.appendChild(newP);
-		getListdiv.appendChild(newDiv);
+		$('<p />',{
+			text:'New to the Track: '+ value[5]
+		}).appendTo(newDiv);	
 		
-		var newP = document.createElement("p");
-		var new2TrackTxt = document.createTextNode("New to the Track: " + value[5]);
-		newP.appendChild(new2TrackTxt);
-		newDiv.appendChild(newP);
-		getListdiv.appendChild(newDiv);
-		
-		var newP = document.createElement("p");
-		var descTxt = document.createTextNode("Comments: " + value[7]);
-		newP.appendChild(descTxt);
-		newDiv.appendChild(newP);
-		getListdiv.appendChild(newDiv);
+		$('<p />',{
+			text:'Comments: ' + value[7]
+		}).appendTo(newDiv);	
 		
 		var raceClassImage = "tjunior.jpg"; 
 			if(raceClass == "4X4 Buggy Pro Mod"){ raceClassImage = "pro-mod.jpg"; }
