@@ -1,6 +1,6 @@
 //Dan Annis
-
-
+//$('#racerCheckInPage').live('pageinit', function{ Kills CRUD
+	
 // GET ITEMS FUNCTION ----------------------------
 function getItems(){
 	var getListdiv = $('#list')[0];
@@ -49,41 +49,28 @@ function getItems(){
 			text:'Comments: ' + value[7]
 		}).appendTo(newDiv);	
 		
-		var raceClassImage = "tjunior.jpg"; 
-			if(raceClass == "4X4 Buggy Pro Mod"){ raceClassImage = "pro-mod.jpg"; }
-			if(raceClass == "4X4 Buggy Sportsman"){ raceClassImage = "sman.jpg"; }
-			if(raceClass == "4X4 Buggy Junior"){ raceClassImage = "junior.jpg"; }
-			if(raceClass == "4X4 Truggy Pro Mod"){ raceClassImage = "tpro-mod.jpg"; }
-			if(raceClass == "4X4 Truggy Sprotsman"){ raceClassImage = "tsman.jpg"; }
+		var raceClassImage = "junior.jpg"; 
+			if(raceClass == "4X4 Buggy Pro Mod"){ raceClassImage = "images/pro-mod.jpg"; }
+			if(raceClass == "4X4 Buggy Sportsman"){ raceClassImage = "images/sman.jpg"; }
+			if(raceClass == "4X4 Buggy Junior"){ raceClassImage = "images/junior.jpg"; }
+			if(raceClass == "4X4 Truggy Pro Mod"){ raceClassImage = "images/tpro-mod.jpg"; }
+			if(raceClass == "4X4 Truggy Sprotsman"){ raceClassImage = "images/tsman.jpg"; }
 		
-		//add image
-		$('<p>').appendTo(newDiv);
+		//add image		
+		$('<p id="racerImage">').appendTo(newDiv);
 		$('<img />',{
-			src: "images/" + raceClassImage
-		}).appendTo(newDiv); //I need to get this into the P tag
+			src: raceClassImage
+		}).appendTo(newDiv);
 		
 		
 		//delete single item link
-		var newP = document.createElement("p");
-		var deleteLink = document.createElement("a");
-		var setHref = deleteLink.setAttribute("href", "#");
-		var setOnclick = deleteLink.setAttribute("onclick", "deleteItem(" + key + ");");
-		var deleteText = document.createTextNode("Delete item");
-		deleteLink.appendChild(deleteText);
-		newP.appendChild(deleteLink);
-		newDiv.appendChild(newP);
+		$('<p><a href="#" onclick="deleteItem(' + key + ')">Delete Item</a></p>)').appendTo(newDiv);
 		getListdiv.appendChild(newDiv);
 		
 		//edit single item link
-		var newP = document.createElement("p");
-		var editLink = document.createElement("a");
-		var setHref = editLink.setAttribute("href", "#");
-		var setOnclick = editLink.setAttribute("onclick", "editItem(" + key + ");");
-		var editText = document.createTextNode("Edit item");
-		editLink.appendChild(editText);
-		newP.appendChild(editLink);
-		newDiv.appendChild(newP);
-		}
+		$('<p><a href="#" onclick="editItem(' + key + ')">Edit Item</a></p>)').appendTo(newDiv);
+		getListdiv.appendChild(newDiv);
+		} // ending the data function
 		
 		if(localStorage.getItem('appnickName')){
 			var clearLink = $('#clear').css('display', 'block'); 
@@ -257,6 +244,9 @@ $(document).ready( function() {
     var today = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
     $('#raceDate').val(today);
 });
+
+	
+//   });//End init function
 
 
 
