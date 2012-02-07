@@ -250,3 +250,100 @@ $(document).ready( function() {
 
 
 
+
+// DATA FUNCTIONS!------------  NOT WORKING YET!!!
+
+// JSON Data
+$('#jsonbutton').bind('click', function(){
+	$('#mydata').empty();
+	$.ajax({
+		url: 'xhr/data.json',
+		type: 'GET',
+		dataType: 'json',
+		success: function(response){
+        	for (var i=0, j=response.racers.length; i<j; i++){
+				var jdata = response.racers[i];
+				$(''+
+					'<li class="racerName">'+
+						'<h3>'+ jdata.name +'</h3>'+
+						'<h4>'+ jdata.fullname +'</h4>'+
+						'<p>'+ jdata.age +'</p>'+
+					'</li><hr />'
+				).appendTo('#mydata');
+				console.log(response);
+			}
+		}
+	});
+	return false;
+});
+
+// XML Data
+$('#xmlbutton').bind('click', function(){
+	$('#mydata').empty();
+	$.ajax({
+		url: 'xhr/data.xml',
+		type: 'GET',
+		dataType: 'xml',
+		success: function(xml){
+			$(xml).find("racer").each(function(){
+   				var name = $(this).find('name').text();
+   				var fullname = $(this).find('fullname').text();
+   				var age = $(this).find('age').text();
+    			$(''+
+					'<li class="racerName">'+
+						'<h3>'+name +'</h3>'+
+						'<h4>'+ fullname +'</h4>'+
+						'<p>'+ age +'</p>'+
+					'</li><hr />'
+				).appendTo('#mydata');
+				console.log(xml);
+			});
+		}
+	});
+	return false;
+});
+
+
+//CSV Data
+$('#csvbutton').bind('click', function(){
+	$('#mydata').empty();
+	 $.ajax({
+        type: "GET",
+        url: "xhr/data.csv",
+        dataType: "text",
+        success: function(data) {
+        	var allTextLines = data.split(/\r\n|\n/);
+    		var headers = allTextLines[0].split(',');
+    		var lines = []; // main array that hold each racer array
+
+			for (var i=1; i<allTextLines.length; i++) {
+				var data = allTextLines[i].split(',');
+				if (data.length == headers.length) {
+					var racer = []; // blank array for each racer
+					
+					for (var j=0; j<headers.length; j++) {
+						racer.push(data[j]); //puts each racer into the array
+					}
+					lines.push(racer); // puts the racer array into the main array
+				}
+				
+			}
+			
+			for (var m=0; m<lines.length; m++){
+				var racer = lines[m];
+			$(''+
+					'<li class="racerName">'+
+						'<h3>'+ racer[0] +'</h3>'+
+						'<h4>'+ racer[1] +'</h4>'+
+						'<p>'+ racer[2] +'</p>'+
+					'</li><hr />'
+				).appendTo('#mydata');
+			console.log(lines);	
+			}
+        }
+	});
+	return false;
+});
+
+
+
