@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeOfClasses>
+	<typeOfClass>
+		<type>4X4 Buggy Pro Mod</type>
+		<description>It's Bugg'in for the Masters!</description>
+	</typeOfClass>
+    
+    <typeOfClass>
+		<type>4X4 Buggy Sportsman</type>
+		<description>You just aren't quite pro yet huh?</description>
+	</typeOfClass>
+    
+    <typeOfClass>
+		<type>4X4 Buggy Junior</type>
+		<description>New to the club!</description>
+	</typeOfClass>
+    
+    <typeOfClass>
+		<type>4X4 Truggy Pro Mod</type>
+		<description>It's Truck'in for the Masters!</description>
+	</typeOfClass>
+        
+    <typeOfClass>
+		<type>4X4 Truggy Sprotsman</type>
+		<description>You just Love the Truck, but ain't that good!</description>
+	</typeOfClass>
+    
+    <typeOfClass>
+		<type>4X4 Truggy Junior</type>
+		<description>New to the club!</description>
+	</typeOfClass>
+    
+</typeOfClasses>

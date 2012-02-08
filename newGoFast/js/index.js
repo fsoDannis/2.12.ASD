@@ -1,6 +1,31 @@
 //Dan Annis
+// XML Data   --- LOADS UNDER RACING INFO >> CLASSES
+$('#xmlbutton').bind('click', function(){
+	$('#race_classes').empty();
+	$.ajax({
+		url: 'xhr/data.xml',
+		type: 'GET',
+		dataType: 'xml',
+		success: function(xml){
+			$(xml).find("typeOfClass").each(function(){
+   				var type = $(this).find('type').text();
+   				var description = $(this).find('description').text();
+    			$(''+
+    			'<ul data-role="listview" data-theme="d">'+
+					'<li class="classtypes">'+
+						'<h3>'+ type +'</h3>'+
+						'<p align="left" style="color:#667C26">'+ description +'</p>'+
+					'</li></ul>'
+				).appendTo('#race_classes');
+				console.log(xml);
+			});
+		}
+	});
+	return false;
+});
 
-//CSV Data
+
+//CSV Data  --- LOADS UNDER ANNOUNCEMENTS
 $('#csvbutton').bind('click', function(){
 	$('#an_list').empty();
 	 $.ajax({
@@ -41,5 +66,6 @@ $('#csvbutton').bind('click', function(){
 	});
 	return false;
 });
+
 
 
