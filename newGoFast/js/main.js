@@ -319,23 +319,23 @@ $('#csvbutton').bind('click', function(){
 			for (var i=1; i<allTextLines.length; i++) {
 				var data = allTextLines[i].split(',');
 				if (data.length == headers.length) {
-					var racer = []; // blank array for each racer
+					var headLines = []; // blank array for each racer
 					
 					for (var j=0; j<headers.length; j++) {
-						racer.push(data[j]); //puts each racer into the array
+						headLines.push(data[j]); //puts each racer into the array
 					}
-					lines.push(racer); // puts the racer array into the main array
+					lines.push(headLines); // puts the racer array into the main array
 				}
 				
 			}
 			
 			for (var m=0; m<lines.length; m++){
-				var racer = lines[m];
+				var headLines = lines[m];
 			$(''+
-					'<li class="racerName">'+
-						'<h3>'+ racer[0] +'</h3>'+
-						'<h4>'+ racer[1] +'</h4>'+
-						'<p>'+ racer[2] +'</p>'+
+					'<li class="headLines">'+
+						'<h3>'+ headLines[2] +'</h3>'+
+						'<h4>'+ headLines[3] +'</h4>'+
+						'<p>'+ headLines[0] +'</p>'+
 					'</li><hr />'
 				).appendTo('#mydata');
 			console.log(lines);	
