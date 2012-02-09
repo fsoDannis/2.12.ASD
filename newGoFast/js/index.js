@@ -67,7 +67,8 @@ $('#csvbutton').bind('click', function(){
 	return false;
 });
 
-// JSON Data
+
+// JSON Data --- LOADS UNDER RACING INFO > PERSONAL RACE RECORDS
 $('#jsonbutton').bind('click', function(){
 	$('#r_names').empty();
 	$.ajax({
