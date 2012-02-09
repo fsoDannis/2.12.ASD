@@ -67,5 +67,27 @@ $('#csvbutton').bind('click', function(){
 	return false;
 });
 
-
+// JSON Data
+$('#jsonbutton').bind('click', function(){
+	$('#r_names').empty();
+	$.ajax({
+		url: 'xhr/data.json',
+		type: 'GET',
+		dataType: 'json',
+		success: function(response){
+			//$('<ul data-role="listview" data-theme="e" data-inset="true" data-filter="true">').appendTo('#r_names');
+        	for (var i=0, j=response.raceRecords.length; i<j; i++){
+				var jdata = response.raceRecords[i];
+				$(''+
+					'<li><a href="#">'+ jdata.nickName + '</a><p style="color:#82CAFF;margin-left:20px;">' + 
+					'( '+ jdata.fullName + ' )' +
+					'</li>'
+				).appendTo('#r_names');
+				console.log(response);
+			}
+		$('</ul>').appendTo('#r_names');
+		}
+	});
+	return false;
+});
 
