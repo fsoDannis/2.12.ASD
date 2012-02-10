@@ -18,8 +18,7 @@ $('#xmlbutton').bind('click', function(){
 					'</li></ul>'
 				).appendTo('#race_classes');
 			//	console.log(xml);
-			$("#race_classes").listview("refresh");
-			});
+			});			$("#race_classes").listview("refresh");	
 		}
 	});
 	return false;
@@ -62,10 +61,11 @@ $('#csvbutton').bind('click', function(){
 					'</li></ul>'
 				).appendTo('#an_list');
 		//	console.log(lines);	
-		$("#an_list").listview("refresh");
+		
 			}
-        }
+        }		
 	});
+$("#an_list").listview("refresh");
 	return false;
 });
 
@@ -86,7 +86,7 @@ $('#jsonbutton').bind('click', function(){
 					'</li>'
 				).appendTo('#r_names');
 			//	console.log(response);
-				$("#r_names").listview("refresh");
+				//$("#r_names").listview("refresh");
 			}
 		}
 	});
