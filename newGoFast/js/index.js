@@ -53,9 +53,7 @@ $('#csvbutton').bind('click', function(){
 			
 			for (var m=0; m<lines.length; m++){
 				var headLines = lines[m];
-			$(''+
-				'<ul data-role="listview" data-theme="d">'+
-					'<li class="headLines">'+
+			$(		'<li class="headLines">'+
 						'<h3>'+ headLines[2] +'</h3>'+
 						'<p>'+ headLines[1] +'</p>'+
 						'<p align="right">'+ 'Source: ' + headLines[0] +'</p>'+
