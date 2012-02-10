@@ -65,6 +65,7 @@ $('#csvbutton').bind('click', function(){
 			}
         }		
 	});
+$.mobile.changePage( '#Announcements', true,true,none);
 $("#an_list").listview("refresh");
 	return false;
 });
