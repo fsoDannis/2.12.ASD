@@ -27,6 +27,7 @@ $('#xmlbutton').bind('click', function(){
 
 //CSV Data  --- LOADS UNDER ANNOUNCEMENTS
 $('#csvbutton').bind('click', function(){
+	$.mobile.changePage( '#Announcements', true,true,none);
 	$('#an_list').empty();
 	 $.ajax({
         type: "GET",
@@ -65,7 +66,7 @@ $('#csvbutton').bind('click', function(){
 			}
         }		
 	});
-$.mobile.changePage( '#Announcements', true,true,none);
+
 $("#an_list").listview("refresh");
 	return false;
 });
