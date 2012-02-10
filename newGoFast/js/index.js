@@ -27,7 +27,7 @@ $('#xmlbutton').bind('click', function(){
 
 //CSV Data  --- LOADS UNDER ANNOUNCEMENTS
 $('#csvbutton').bind('click', function(){
-	$.mobile.changePage( '#Announcements', true,true,none);
+	$.mobile.changePage( '#Announcements', {});
 	$('#an_list').empty();
 	 $.ajax({
         type: "GET",
