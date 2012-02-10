@@ -17,7 +17,8 @@ $('#xmlbutton').bind('click', function(){
 						'<p align="left" style="color:#667C26">'+ description +'</p>'+
 					'</li></ul>'
 				).appendTo('#race_classes');
-				console.log(xml);
+			//	console.log(xml);
+			$("#race_classes").listview("refresh");
 			});
 		}
 	});
@@ -60,7 +61,8 @@ $('#csvbutton').bind('click', function(){
 						'<p align="right">'+ 'Source: ' + headLines[0] +'</p>'+
 					'</li></ul>'
 				).appendTo('#an_list');
-			console.log(lines);	
+		//	console.log(lines);	
+		$("#an_list").listview("refresh");
 			}
         }
 	});
@@ -76,7 +78,6 @@ $('#jsonbutton').bind('click', function(){
 		type: 'GET',
 		dataType: 'json',
 		success: function(response){
-			//$('<ul data-role="listview" data-theme="e" data-inset="true" data-filter="true">').appendTo('#r_names');
         	for (var i=0, j=response.raceRecords.length; i<j; i++){
 				var jdata = response.raceRecords[i];
 				$(''+
@@ -84,9 +85,9 @@ $('#jsonbutton').bind('click', function(){
 					'( '+ jdata.fullName + ' )' +
 					'</li>'
 				).appendTo('#r_names');
-				console.log(response);
+			//	console.log(response);
+				$("#r_names").listview("refresh");
 			}
-		$('</ul>').appendTo('#r_names');
 		}
 	});
 	return false;
