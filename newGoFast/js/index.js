@@ -65,7 +65,7 @@ $('#csvbutton').bind('click', function(){
 			}
         }		
 	});
-$("#an_list").listview("refresh");
+$("#Announcements").listview("refresh");
 	return false;
 });
 
